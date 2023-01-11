@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução a Frontend</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/form.css">
+  </head>
+  <body>
+    <header>
+      <a href="javascript:history.back()">👈 Voltar</a>
+      <h1>Introdução a Frontend</h1>
+    </header>
+
+    <section>
+      <h3>Formulário</h3>
+      <form>
+        <div>
+          <label for="name">Nome: (requirido)</label>
+          <input id="name" name="name" type="text" required />
+        </div>
+
+        <div>
+          <label for="email">E-mail:</label>
+          <input id="email" name="email" type="email" />
+        </div>
+
+        <div>
+          <label for="birthday">Data de Nascimento:</label>
+          <input id="birthday" name="birthday" type="date" />
+        </div>
+
+        <div>
+          <label for="favoriteColor">Cor favorita:</label>
+          <input id="favoriteColor" name="favoriteColor" type="color" />
+        </div>
+
+        <div>
+          <label for="age">Idade:</label>
+          <input id="age" name="age" type="number" min="1" max="100" />
+        </div>
+
+        <div>
+          <label for="mySite">Meu site:</label>
+          <input id="mySite" name="mySite" type="url" />
+        </div>
+
+        <div>
+          <label for="phone">Telefone:</label>
+          <input id="phone" name="phone" type="tel" />
+        </div>
+
+        <div>
+          <label for="time">Tempo:</label>
+          <input id="time" name="time" type="time" />
+        </div>
+
+        <div>
+          <label for="password">Senha:</label>
+          <input id="password" name="password" type="password" />
+        </div>
+
+        <div>
+          <label for="search">Pesquisa:</label>
+          <input id="search" name="search" type="search" />
+        </div>
+
+        <input type="reset" value="Resetar Formulário" />
+
+        <div>
+          <h4>Botões de submeter o formulário (clique neles)</h4>
+          <input type="submit" />
+          <input type="submit" value="Submeter meu formulário" />
+          <button type="submit">Enviar formulário</button>
+        </div>
+      </form>
+
+      <div>
+        <p>Valores do formulário (Submeta o mesmo para preencher)</p>
+        <pre></pre>
+      </div>
+    </section>
+
+    <script>
+      const form = document.querySelector('form')
+      const pre = document.querySelector('pre')
+
+      const getFormValues = (form) => {
+        const data = new FormData(form);
+        const formValues = {}
+
+        for (let entry of data.entries()) {
+          const [key, value] = entry;
+          formValues[key] = value
+        }
+
+        return formValues
+      }
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault()
+        const formValues = getFormValues(form)
+
+        pre.innerHTML = JSON.stringify(formValues, null, 2)
+      })
+    </script>
+  </body>
+</html>

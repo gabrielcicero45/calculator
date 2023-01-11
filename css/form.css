@@ -1,0 +1,7 @@
+form > div {
+  margin: 12px 0;
+}
+
+form label {
+  min-width: 400px;
+}
