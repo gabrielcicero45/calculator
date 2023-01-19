@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução a Frontend</title>
+    <link rel="stylesheet" href="../../css/global.css">
+  </head>
+  <body>
+    <header>
+      <a href="javascript:history.back()">👈 Voltar</a>
+      <h1>Introdução a Frontend</h1>
+    </header>
+
+    <section>
+      <h3>Contador</h3>
+
+      <div>
+        <p>Valor atual: <span data-counter-value>0</span></p>
+
+        <button id="increment-button">Incrementar (+)</button>
+        <button id="decrement-button">Decrementar (-)</button>
+      </div>
+    </section>
+
+    <script>
+      const counterElement = document.querySelector('[data-counter-value]')
+      const incrementButton = document.querySelector('#increment-button')
+      const decrementButton = document.querySelector('#decrement-button')
+      let counterValue = parseInt(counterElement.textContent)
+
+      const updateDisplayedCounter = () => {
+        counterElement.textContent = counterValue
+      }
+
+      incrementButton.addEventListener('click', () => {
+        counterValue++;
+        updateDisplayedCounter()
+      })
+
+      decrementButton.addEventListener('click', () => {
+        counterValue--;
+        updateDisplayedCounter()
+      })
+    </script>
+  </body>
+</html>
