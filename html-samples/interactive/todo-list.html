@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução a Frontend</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/todo-list.css">
+  </head>
+
+  <body>
+    <header>
+      <a href="javascript:history.back()">👈 Voltar</a>
+      <h1>Introdução a Frontend</h1>
+    </header>
+
+    <section>
+      <h3>Lista de tarefas</h3>
+
+      <form>
+        <input type="text" id="new-task" placeholder="Adicionar nova tarefa" required>
+        <button type="submit">Adicionar</button>
+      </form>
+
+      <ul id="todo-list"></ul>
+    </section>
+
+    <script>
+      const form = document.querySelector('form')
+      const taskInput = document.querySelector('#new-task')
+      const todoList = document.querySelector('#todo-list')
+
+      const addTask = (task) => {
+        const taskLi = document.createElement('li')
+
+        taskLi.innerHTML = `${task}<button>Remover</button>`
+
+        const removeBtn = taskLi.querySelector('button')
+
+        removeBtn.addEventListener('click', () => {
+          taskLi.remove()
+        })
+
+        todoList.appendChild(taskLi)
+      }
+
+      const focusInput = () => {
+        taskInput.focus()
+      }
+
+      const clearForm = () => {
+        taskInput.value = ''
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const taskValue = taskInput.value
+
+        if (taskValue) {
+          addTask(taskValue)
+          clearForm()
+          focusInput()
+        }
+      })
+    </script>
+  </body>
+</html>
