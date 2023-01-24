@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução a Frontend</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/calculator.css">
+  </head>
+  <body>
+    <header>
+      <a href="javascript:history.back()">👈 Voltar</a>
+      <h1>Introdução a Frontend</h1>
+    </header>
+
+    <section>
+      <h3>Calculadora (Desafio)</h3>
+
+      <div class="calculator">
+        <div class="display" data-display>
+          0
+        </div>
+
+        <div class="actions">
+          <button data-number>7</button>
+          <button data-number>8</button>
+          <button data-number>9</button>
+          <button data-operation class="operation">÷</button>
+          <button data-number>4</button>
+          <button data-number>5</button>
+          <button data-number>6</button>
+          <button data-operation class="operation">×</button>
+          <button data-number>1</button>
+          <button data-number>2</button>
+          <button data-number>3</button>
+          <button data-operation class="operation">-</button>
+          <button data-number>0</button>
+          <button data-point>.</button>
+          <button data-execute class="execute">=</button>
+          <button data-operation class="operation">+</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="checklist">
+      <details>
+        <summary>Checklist do desafio</summary>
+        <ul>
+          <li>Implementar função de adição</li>
+          <li>Implementar função de subtração</li>
+          <li>Implementar função de multiplicação</li>
+          <li>Implementar função de divisão</li>
+          <li>O ponto (".") só pode ser usado 1 vez</li>
+          <li>O visor tem que se manter atualizado, ou seja, clicar em algum botão, ele mudará</li>
+          <li>Algumas calculadoras vão mostrando as operações, como no Windows ou site do Google. Isso é opcional</li>
+        </ul>
+      </details>
+    </section>
+
+    <script>
+      const displayElement = document.querySelector('[data-display]')
+      const pointElement = document.querySelector('[data-point]')
+      const executeElement = document.querySelector('[data-execute]')
+      const numberElements = document.querySelectorAll('[data-number]')
+      const operationElements = document.querySelectorAll('[data-operation]')
+
+      console.log('Please, implement this calculator!')
+
+      numberElements.forEach((numberElement) => {
+        numberElement.addEventListener('click', () => {
+          const { innerText: strNumber } = numberElement
+
+          displayElement.innerText += strNumber
+        })
+      })
+    </script>
+  </body>
+</html>
