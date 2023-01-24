@@ -19,7 +19,7 @@
       <form>
         <div>
           <label for="name">Nome: (requirido)</label>
-          <input id="name" name="name" type="text" required />
+          <input id="name" name="name" type="text" required autofocus />
         </div>
 
         <div>
@@ -65,6 +65,51 @@
         <div>
           <label for="search">Pesquisa:</label>
           <input id="search" name="search" type="search" />
+        </div>
+
+        <div>
+          <legend>Selecione sua compania favorita:</legend>
+
+          <input type="radio" name="company" id="codeminer42" value="codeminer42">
+          <label for="codeminer42">Codeminer42</label>
+
+          <input type="radio" name="company" id="google" value="google">
+          <label for="google">Google</label>
+
+          <input type="radio" name="company" id="facebook" value="facebook">
+          <label for="facebook">Facebook</label>
+
+          <input type="radio" name="company" id="microsoft" value="microsoft">
+          <label for="microsoft">microsoft</label>
+        </div>
+
+        <div>
+          <legend>Selecione suas habilidades:</legend>
+
+          <div>
+            <input type="checkbox" id="javascript" name="javascript" value="true">
+            <label for="javascript">JavaScript</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="ruby" name="ruby" value="true">
+            <label for="ruby">Ruby</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="java" name="java" value="true">
+            <label for="java">Java</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="swift" name="swift" value="true">
+            <label for="swift">Swift</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="fortran" name="fortran" value="true">
+            <label for="fortran">Fortran</label>
+          </div>
         </div>
 
         <input type="reset" value="Resetar Formulário" />

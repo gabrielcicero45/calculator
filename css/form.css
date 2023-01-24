@@ -5,3 +5,11 @@ form > div {
 form label {
   min-width: 400px;
 }
+
+legend {
+  margin-bottom: 4px;
+}
+
+[type="reset"] {
+  margin-top: 16px;
+}
