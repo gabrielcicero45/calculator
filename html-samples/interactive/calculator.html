@@ -17,33 +17,13 @@
     <section>
       <h3>Calculadora (Desafio)</h3>
 
-      <div class="calculator">
-        <div class="display" data-display>
-          0
-        </div>
-
-        <div class="actions">
-          <button data-number>7</button>
-          <button data-number>8</button>
-          <button data-number>9</button>
-          <button data-operation class="operation">÷</button>
-          <button data-number>4</button>
-          <button data-number>5</button>
-          <button data-number>6</button>
-          <button data-operation class="operation">×</button>
-          <button data-number>1</button>
-          <button data-number>2</button>
-          <button data-number>3</button>
-          <button data-operation class="operation">-</button>
-          <button data-number>0</button>
-          <button data-point>.</button>
-          <button data-execute class="execute">=</button>
-          <button data-operation class="operation">+</button>
-        </div>
+      <div>
+        <!-- Pode usar essa DIV para implementar sua calculadora -->
+        Atualize o HTML e implemente as funcionalidades aqui!
       </div>
     </section>
 
-    <section class="checklist">
+    <section class="checklist" style="margin-top: 20px;">
       <details>
         <summary>Checklist do desafio</summary>
         <ul>
@@ -57,23 +37,5 @@
         </ul>
       </details>
     </section>
-
-    <script>
-      const displayElement = document.querySelector('[data-display]')
-      const pointElement = document.querySelector('[data-point]')
-      const executeElement = document.querySelector('[data-execute]')
-      const numberElements = document.querySelectorAll('[data-number]')
-      const operationElements = document.querySelectorAll('[data-operation]')
-
-      console.log('Please, implement this calculator!')
-
-      numberElements.forEach((numberElement) => {
-        numberElement.addEventListener('click', () => {
-          const { innerText: strNumber } = numberElement
-
-          displayElement.innerText += strNumber
-        })
-      })
-    </script>
   </body>
 </html>
