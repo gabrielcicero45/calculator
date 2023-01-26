@@ -60,7 +60,7 @@
         <summary>Checklist do desafio</summary>
         <ul>
           <li>Implementar função de adição &#10004;</li>
-          <li>Implementar função de subtração</li>
+          <li>Implementar função de subtração &#10004;</li>
           <li>Implementar função de multiplicação</li>
           <li>Implementar função de divisão</li>
           <li>O ponto (".") só pode ser usado 1 vez</li>
@@ -90,13 +90,16 @@
         })
       })
       additionButton.addEventListener('click', () => {
-        let previousValue = resultElement.textContent
-        resultElement.textContent = resultElement.textContent.concat('+')
+        resultElement.textContent.charAt(resultElement.textContent.length-1) == '+' ? '' : 
+                                                                                  resultElement.textContent = resultElement.textContent.concat('+')
+        
+      })
+      subtractionButton.addEventListener('click', () => {
+        resultElement.textContent.charAt(resultElement.textContent.length-1) == '-' ? '' : 
+                                                                                  resultElement.textContent = resultElement.textContent.concat('-')
       })
       equalsButton.addEventListener('click', () => {
-        resultElement.textContent = resultElement.textContent.split('+').reduce( function(t, s) { 
-        return parseInt(t) + parseInt(s); 
-    });
+        resultElement.textContent = eval(resultElement.textContent)
       })
 
     </script>
