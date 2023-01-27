@@ -22,33 +22,33 @@
           <tbody>
             <tr><td colspan="4" id="result"></td></tr>
             <tr>
-              <td><button id="AC" class="special-button">AC</button></td>
-              <td><button id="+/-" class="special-button">+/-</button></td>
-              <td><button id="%" class="special-button">%</button></td>
-              <td><button id="/" class="operator-button">/</button></td>
+              <td><button id="AC" class="button--special">AC</button></td>
+              <td><button id="+/-" class="button--special">+/-</button></td>
+              <td><button id="%" class="button--special">%</button></td>
+              <td><button id="/" class="button--operator">/</button></td>
             </tr>
             <tr>
-              <td><button id="seven" class="number-button">7</button></td>
-              <td><button id="eight" class="number-button">8</button></td>
-              <td><button id="nine" class="number-button">9</button></td>
-              <td><button id="multiply" class="operator-button">*</button></td>
+              <td><button>7</button></td>
+              <td><button>8</button></td>
+              <td><button>9</button></td>
+              <td><button id="multiply" class="button--operator">*</button></td>
             </tr>
             <tr>
-              <td><button id="four" class="number-button">4</button></td>
-              <td><button id="five" class="number-button">5</button></td>
-              <td><button id="six" class="number-button">6</button></td>
-              <td><button id="subtraction" class="operator-button">-</button></td>
+              <td><button>4</button></td>
+              <td><button>5</button></td>
+              <td><button>6</button></td>
+              <td><button id="subtraction" class="button--operator">-</button></td>
             </tr>
             <tr>
-              <td><button id="three" class="number-button">3</button></td>
-              <td><button id="two" class="number-button">2</button></td>
-              <td><button id="one" class="number-button">1</button></td>
-              <td><button id="addition" class="operator-button">+</button></td>
+              <td><button>3</button></td>
+              <td><button>2</button></td>
+              <td><button>1</button></td>
+              <td><button id="addition" class="button--operator">+</button></td>
             </tr>
             <tr>
-              <td><button id="zero" class="number-button">0</button></td>
-              <td><button id="dot" class="number-button">.</button></td>
-              <td colspan="2"><button id="equals" class="equals-button operator-button">=</button></td>
+              <td><button>0</button></td>
+              <td><button id="dot" >.</button></td>
+              <td colspan="2"><button id="equals" class="button--equals button--operator">=</button></td>
             </tr>
           </tbody>
         </table>
@@ -69,36 +69,6 @@
         </ul>
       </details>
     </section>
-    <script>
-      const resultElement = document.querySelector('#result')
-      const numbers = document.querySelectorAll('.number-button')
-      const clearButton = document.querySelector('#AC')
-      const additionButton = document.querySelector('#addition')
-      const subtractionButton = document.querySelector('#subtraction')
-      const equalsButton = document.querySelector('#equals')
-      let previousValue = parseInt(resultElement.textContent)
-      
-      const updateDisplayedCounter = () => {
-        resultElement.textContent = counterValue
-      }
-      clearButton.addEventListener('click', ()=>{
-        resultElement.textContent = ''
-      })
-      numbers.forEach(item =>{
-        item.addEventListener('click', ()=>{
-        resultElement.textContent = resultElement.textContent.concat(item.innerText)
-        })
-      })
-      additionButton.addEventListener('click', () => {
-        let previousValue = resultElement.textContent
-        resultElement.textContent = resultElement.textContent.concat('+')
-      })
-      equalsButton.addEventListener('click', () => {
-        resultElement.textContent = resultElement.textContent.split('+').reduce( function(t, s) { 
-        return parseInt(t) + parseInt(s); 
-    });
-      })
-
-    </script>
+    <script src="../../js/calculator.js"></script>
   </body>
 </html>
