@@ -17,9 +17,41 @@
     <section>
       <h3>Calculadora (Desafio)</h3>
 
-      <div>
-        <!-- Pode usar essa DIV para implementar sua calculadora -->
-        Atualize o HTML e implemente as funcionalidades aqui!
+      <div class="calculator">
+        <table>
+          <tbody>
+            <tr><td colspan="4" id="result"></td></tr>
+            <tr>
+              <td><button id="AC" class="button--special">AC</button></td>
+              <td><button id="+/-" class="button--special">+/-</button></td>
+              <td><button id="%" class="button--special">%</button></td>
+              <td><button id="/" class="button--operator">/</button></td>
+            </tr>
+            <tr>
+              <td><button class="button--number">7</button></td>
+              <td><button class="button--number">8</button></td>
+              <td><button class="button--number">9</button></td>
+              <td><button id="multiply" class="button--operator">*</button></td>
+            </tr>
+            <tr>
+              <td><button class="button--number">4</button></td>
+              <td><button class="button--number">5</button></td>
+              <td><button class="button--number">6</button></td>
+              <td><button id="subtraction" class="button--operator">-</button></td>
+            </tr>
+            <tr>
+              <td><button class="button--number">3</button></td>
+              <td><button class="button--number">2</button></td>
+              <td><button class="button--number">1</button></td>
+              <td><button id="addition" class="button--operator">+</button></td>
+            </tr>
+            <tr>
+              <td><button class="button--number">0</button></td>
+              <td><button id="dot"  class="button--number">.</button></td>
+              <td colspan="2"><button id="equals" class="button--equals button--operator">=</button></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -27,7 +59,7 @@
       <details>
         <summary>Checklist do desafio</summary>
         <ul>
-          <li>Implementar função de adição</li>
+          <li>Implementar função de adição &#10004;</li>
           <li>Implementar função de subtração</li>
           <li>Implementar função de multiplicação</li>
           <li>Implementar função de divisão</li>
@@ -37,5 +69,6 @@
         </ul>
       </details>
     </section>
+    <script src="../../js/calculator.js"></script>
   </body>
 </html>
