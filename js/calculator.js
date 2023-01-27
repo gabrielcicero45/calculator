@@ -1,5 +1,5 @@
 const resultElement = document.querySelector("#result");
-const numbers = document.querySelectorAll(".number-button");
+const numbers = document.querySelectorAll(".button--number");
 const clearButton = document.querySelector("#AC");
 const additionButton = document.querySelector("#addition");
 const subtractionButton = document.querySelector("#subtraction");
