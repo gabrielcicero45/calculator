@@ -23,6 +23,12 @@ additionButton.addEventListener("click", () => {
     : (resultElement.textContent = resultElement.textContent.concat("+"));
 });
 
+subtractionButton.addEventListener("click", () => {
+  resultElement.textContent.charAt(resultElement.textContent.length - 1) == "-"
+    ? ""
+    : (resultElement.textContent = resultElement.textContent.concat("-"));
+});
+
 equalsButton.addEventListener("click", () => {
   resultElement.textContent = eval(resultElement.textContent);
 });
