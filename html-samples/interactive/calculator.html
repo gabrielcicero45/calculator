@@ -23,31 +23,31 @@
             <tr><td colspan="4" id="result"></td></tr>
             <tr>
               <td><button id="AC" class="special-button">AC</button></td>
+              <td><button id="DEL" class="special-button">DEL</button></td>
               <td><button id="inverse" class="special-button">+/-</button></td>
-              <td><button id="%" class="special-button">%</button></td>
-              <td><button id="/" class="operator-button">/</button></td>
+              <td><button id="division" class="operator-button">/</button></td>
             </tr>
             <tr>
-              <td><button id="seven" class="number-button">7</button></td>
-              <td><button id="eight" class="number-button">8</button></td>
-              <td><button id="nine" class="number-button">9</button></td>
+              <td><button class="number-button">7</button></td>
+              <td><button class="number-button">8</button></td>
+              <td><button class="number-button">9</button></td>
               <td><button id="multiplication" class="operator-button">x</button></td>
             </tr>
             <tr>
-              <td><button id="four" class="number-button">4</button></td>
-              <td><button id="five" class="number-button">5</button></td>
-              <td><button id="six" class="number-button">6</button></td>
+              <td><button class="number-button">4</button></td>
+              <td><button class="number-button">5</button></td>
+              <td><button class="number-button">6</button></td>
               <td><button id="subtraction" class="operator-button">-</button></td>
             </tr>
             <tr>
-              <td><button id="three" class="number-button">3</button></td>
-              <td><button id="two" class="number-button">2</button></td>
-              <td><button id="one" class="number-button">1</button></td>
+              <td><button class="number-button">3</button></td>
+              <td><button class="number-button">2</button></td>
+              <td><button class="number-button">1</button></td>
               <td><button id="addition" class="operator-button">+</button></td>
             </tr>
             <tr>
-              <td><button id="zero" class="number-button">0</button></td>
-              <td><button id="dot" class="number-button">.</button></td>
+              <td><button class="number-button">0</button></td>
+              <td><button id="dot">.</button></td>
               <td colspan="2"><button id="equals" class="equals-button operator-button">=</button></td>
             </tr>
           </tbody>
@@ -62,9 +62,9 @@
           <li>Implementar função de adição &#10004;</li>
           <li>Implementar função de subtração &#10004;</li>
           <li>Implementar função de multiplicação &#10004;</li>
-          <li>Implementar função de divisão</li>
-          <li>O ponto (".") só pode ser usado 1 vez</li>
-          <li>O visor tem que se manter atualizado, ou seja, clicar em algum botão, ele mudará</li>
+          <li>Implementar função de divisão &#10004;</li>
+          <li>O ponto (".") só pode ser usado 1 vez </li>
+          <li>O visor tem que se manter atualizado, ou seja, clicar em algum botão, ele mudará &#10004;</li>
           <li>Algumas calculadoras vão mostrando as operações, como no Windows ou site do Google. Isso é opcional</li>
         </ul>
       </details>
@@ -73,10 +73,13 @@
       const resultElement = document.querySelector('#result')
       const numbers = document.querySelectorAll('.number-button')
       const clearButton = document.querySelector('#AC')
+      const deleteButton = document.querySelector('#DEL')
       const inverseButton = document.querySelector('#inverse')
+      const dotButton = document.querySelector('#dot')
       const additionButton = document.querySelector('#addition')
       const subtractionButton = document.querySelector('#subtraction')
       const multiplicationButton = document.querySelector('#multiplication')
+      const divisionButton = document.querySelector('#division')
       const equalsButton = document.querySelector('#equals')
       let previousValue = parseInt(resultElement.textContent)
       
@@ -84,6 +87,9 @@
         resultElement.textContent = ''
       })
 
+      deleteButton.addEventListener('click', ()=>{
+        resultElement.textContent = resultElement.textContent.slice(0,-1);
+      })
       inverseButton.addEventListener('click', ()=>{
         resultElement.textContent.charAt(resultElement.textContent.length-1) == '' ? '' :
           resultElement.textContent = eval(`(${resultElement.textContent})*-1`)
@@ -106,8 +112,21 @@
       multiplicationButton.addEventListener('click', () => {
         let result = resultElement.textContent.charAt(resultElement.textContent.length-1)
 
-        result == '*' || result == '+' || result == '-'  || result == '' ? '' : 
+        result == '/' || result == '*' || result == '+' || result == '-'  || result == '' ? '' : 
           resultElement.textContent = resultElement.textContent.concat('*')
+      })
+
+      divisionButton.addEventListener('click', () => {
+        let result = resultElement.textContent.charAt(resultElement.textContent.length-1)
+
+        result == '/' || result == '*' || result == '+' || result == '-'  || result == '' ? '' : 
+          resultElement.textContent = resultElement.textContent.concat('/')
+      })
+      dotButton.addEventListener('click', () => {
+        let result = resultElement.textContent.charAt(resultElement.textContent.length-1)
+
+        result == '.' || /.\d/.test(resultElement.textContent) ?  '' : 
+          resultElement.textContent = resultElement.textContent.concat('.')
       })
       equalsButton.addEventListener('click', () => {
         resultElement.textContent = eval(resultElement.textContent)
