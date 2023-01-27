@@ -20,6 +20,15 @@
    color: white;
  }
 
+ #history {
+  overflow: hidden;
+  max-width: 9ch;
+  text-overflow: ellipsis;
+  font-size: 32px;
+  text-align: start;
+  color: white;
+}
+
  button {
    padding: 8px;
    width: 64px;
@@ -51,6 +60,7 @@
  }
 
  .button--equals {
+   background-color: rgb(255, 140, 10);
    border-radius: 32px;
    width: 132px;
  }
