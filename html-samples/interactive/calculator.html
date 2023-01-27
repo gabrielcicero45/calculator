@@ -20,7 +20,7 @@
       <div class="calculator">
         <table>
           <tbody>
-            <tr><td colspan="4" id="result"></td></tr>
+            <tr><td colspan="4" tabindex="0" id="result"></td></tr>
             <tr>
               <td><button id="AC" class="special-button">AC</button></td>
               <td><button id="DEL" class="special-button">DEL</button></td>
@@ -98,6 +98,17 @@
         item.addEventListener('click', ()=>{
         resultElement.textContent = resultElement.textContent.concat(item.innerText)
         })
+      })
+
+      resultElement.addEventListener('keyup', function (event) {
+        let allowedKeys = ['0','1','2','3','4','5','6','7','8','9']
+        let operatorKeys = ['+','-','*','/','.']
+        console.log(event.key)
+        if(allowedKeys.includes(event.key))
+          resultElement.textContent = resultElement.textContent.concat(event.key)
+
+        if(operatorKeys.includes(event.key) && resultElement.textContent.charAt(resultElement.textContent.length-1) !== event.key)
+          resultElement.textContent = resultElement.textContent.concat(event.key)
       })
       additionButton.addEventListener('click', () => {
         resultElement.textContent.charAt(resultElement.textContent.length-1) == '+' ? '' : 

@@ -17,6 +17,7 @@
   padding: 16px;
   text-align: end;
   color: white;
+  outline: none;
 }
 button{
   padding: 8px;
